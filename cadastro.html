@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MasterTrip - cadastro</title>
+    <!-- fonte do site - GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- página de estilo do site -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body id="telalogin">
+    
+    <header class="container ">
+        <h1 class="title-mastertrip">MasterTrip</h1>
+
+    </header>
+
+<section class="container container--static">
+
+    <div class="info-box left">
+        <h2 class="heading">Você não tem conta?</h2>
+        <p class="info-text">Então inscreva-se aqui e descubra mais lugares lindos</p>
+        <button class="button button--signup">Cadastrar</button>
+    </div>
+  
+    <div class="info-box right">
+        <h2 class="heading">Já tem conta?</h2>
+        <p class="info-text">Então entre na sua conta e continue desfrutando das vantagens</p>
+        <button class="button button--login">Login</button>
+    </div>
+</section>
+
+
+<section class="container container--sliding">
+   
+    <div class="slider-content login">
+        <h2 class="heading alt">Logar</h2>
+        <form id="login">
+            <input class="email" type="text" placeholder="Email">
+            <input class="password" type="password" placeholder="Senha">
+        </form>
+        <button class="button button--login alt">Entrar</button>
+        <p class="info-text alt"><a href="">Esqueceu a senha?</a></p>
+    </div>
+
+   
+    <div class="slider-content signup">
+        <h2 class="heading alt">Cadastrar</h2>
+        <form id="signup">
+            <input class="name" type="text" placeholder="Escreva o Nome completo">
+            <input class="email" type="text" placeholder="Email">
+            <input class="password" type="password" placeholder="Senha">
+        </form>
+        <button class="button button--signup alt">Cadastrar</button>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script>
+
+    (function () {
+        var signup = $('.container--static .button--signup');
+        var login = $('.container--static .button--login');
+        var signupContent = $('.container--sliding .slider-content.signup');
+        var loginContent = $('.container--sliding .slider-content.login');
+        var slider = $('.container--sliding');
+
+        signup.on('click', function () {
+            loginContent.css('display', 'none');
+            signupContent.css('display', 'initial');
+            slider.animate({
+                'left': '30%'
+            }, 350, 'easeOutBack');
+        });
+
+        login.on('click', function () {
+            signupContent.css('display', 'none');
+            loginContent.css('display', 'initial');
+            slider.animate({
+                'left': '70%'
+            }, 350, 'easeOutBack');
+        });
+    })();
+
+
+</script>
+
+</body>
+</html>
